@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="lap.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Task</title>
+</head>
+
+
+<body>
+  <div class="container">
+    <h1 class="header">New Business</h1>
+    <form class="form" id="merchants" name="merchants">
+      <div class="row">
+        <div class="col-sm-4">
+          <label for="name">Name:</label>
+          <input type="text" class="name input-test form-control" required id="merchant-name">
+        </div>
+        <div class="col-sm-4">
+          <label for="email">Email-Id:</label>
+          <input type="email" class="email form-control" required id="merchant-gmail" name="Email">
+        </div>
+        <div class="col-sm-4">
+          <label for="phone">Phone Number:</label>
+          <input class="phone form-control" required id="merchant-phone" type="tel" maxlength="10" name="phone">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-8">
+          <label for="website">Website:</label>
+          <input type="website" class="websitelink form-control" required id="merchant-website" name="webSite">
+        </div>
+        <div class="col-sm-4">
+          <label for="contactName">Contact Name:</label>
+          <input type="text" class="contactName form-control" required id="merchant-contactname" name="contactName">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-4">
+          <label for="phone">Contact Phone:</label>
+          <input class="contactNumber form-control" required id="merchant-contactnumber" type="tel" maxlength="10"
+            name="phone">
+        </div>
+        <div class="col-sm-4">
+          <label for="contactemail">Contact Email:</label>
+          <input type="email" class="gmail form-control" required id="merchant-contactemail" name="contactEmail">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <label for="notes">Notes:</label>
+          <textarea rows="6" cols="30" class="notes form-control" required id="merchant-notes" name="notes"></textarea>
+        </div>
+        <div class="col-sm-8">
+          <label for="type">Type:</label>
+          <label class="radio-inline">
+            <input type="radio" class="merchant-type" name="type1" value="Small Business">Small Business</label>
+          <label class="radio-inline">
+            <input type="radio" class="merchant-type" name="type1" value="Enterprise">Enterprise</label>
+          <label class="radio-inline">
+            <input type="radio" class="merchant-type" name="type1" value="Entreprenenur">Entreprenenur</label>
+        </div>
+        <div class="col-sm-4">
+          <label for="category">Category:</label>
+          <select name="category" class="category form-control" required id="merchant-category">
+            <option value="" disabled selected>Select Category</option>
+            <option value="clothes">Clothes</option>
+            <option value="toys">Toys</option>
+            <option value="groceries">Groceries</option>
+            <option value="electronics">Electronics</option>
+            <option value="digital">Digital</option>
+          </select>
+        </div>
+        <div class="col-sm-4">
+          <label for="commission percentage">Commission Percentage:</label>
+          <input type="number" class="commissionPercentage form-control" id="merchant-commissionpercentage"
+            name="commissionPercentage" maxlength="100">
+        </div>
+        <div class="col-sm-4">
+          <label for="active form">Active Form:</label>
+          <input type="date" class="activeForm form-control" required id="merchant-date" name="activeForm">
+        </div>
+        <div class="col-sm-4">
+          <label for="logo">Logo:</label>
+          <input type="image" class="picture" id="logo" name="logo">
+        </div>
+        <div class="col-sm-4">
+          <input type="checkbox" id="criticalaccount" name="critical Account" value="Critical Account">
+          <label for="critical account"> Critical Account</label>
+        </div>
+        <div class="col-sm-8">
+          <label for="payment options">Payment Options:</label>
+          <label class="radio-inline">
+            <input type="radio" class="merchant-payment" name="type2" value="Cash on Delievery">Cash on Delievery</label>
+          <label class="radio-inline">
+            <input type="radio" class="merchant-payment" name="type2" value="UPI">UPI</label>
+          <label class="radio-inline">
+            <input type="radio" class="merchant-payment" name="type2" value="Card Payment">Card Payment</label>
+        </div>
+      </div>
+      <div class="center">
+        <input type="button" class="btn btn-success" id="button" value="Entry Data" onclick="btn()">
+      </div>
+    </form>
+
+
+    <h2 class="biohead">BIO-DATA</h2>
+    <div class="table-responsive">
+
+      <table class="table table-bordered table-dark" id="tableform">
+        <thead>
+          <tr>
+            <th scope="col">S.No</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email-Id</th>
+            <th scope="col">Phone Number</th>
+            <th scope="col">Website</th>
+            <th scope="col">ContactName</th>
+            <th scope="col">ContactNumber</th>
+            <th scope="col">ContactEmail</th>
+            <th scope="col">InputNotes</th>
+            <th scope="col">Types</th>
+            <th scope="col">Category</th>
+            <th scope="col">CommissionPercentage</th>
+            <th scope="col">ActiveForm</th>
+            <th scope="col">PaymentOptions</th>
+            <th scope="col">Action</th>
+            <th scope="col">Remove</th>
+
+          </tr>
+        </thead>
+        <tbody id="personal3">
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</body>
+<script src="index.js"></script>
+
+</html>

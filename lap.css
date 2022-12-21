@@ -1,0 +1,43 @@
+*{
+    box-sizing: border-box;
+}
+.container{
+     background-color:gray;
+     font-family: sans-serif;
+}
+.container{
+    border-radius: 4px;
+    display: block; 
+}
+body{ 
+    background-color: whitesmoke !important;
+}
+.header{
+    color:beige;
+}
+.row{
+    margin-bottom: 5px;
+    display: block  ;
+}
+.form{
+    padding-top: 15px;
+    padding-bottom: 100px;
+    display: block;
+    flex-direction: column;
+    background:rgba(255,255,255,0.06);
+    border-radius: 30px;
+
+}
+.button{
+    width: 50%;
+    border-color: violet;
+    color: royalblue;
+    text-align: center;
+}
+.tabletitle{
+    border-color: black;
+}
+.biohead{
+    font-weight:bold;
+    color:black;
+}
