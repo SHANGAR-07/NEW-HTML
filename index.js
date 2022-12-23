@@ -1,53 +1,77 @@
+function myfunction() {
+    document.getElementById("form").reset();
+}
+
+function Category() {
+    var ans = document.getElementsByName("merchant-category");
+    let clickingcategory = [];
+    for (i = 0; i < ans.length; i++) {
+        // if (ans[i].Selected)
+        clickingcategory.push(ans[i].value);
+
+    }
+    return clickingcategory;
+}
+
+function paymentoptions(name) {
+    var ans = document.getElementsByName(name);
+    var result = [];
+    var opt;
+    for (var i = 0, iLen = ans.length; i < iLen; i++) {
+        opt = ans[i];
+
+        if (opt.selected) {
+            result.push(opt.value || opt.text);
+        }
+    }
+    return result;
+}
 function btn() {
-    let inputfullName = document.getElementById("merchant-name").value
-    let inputEmail = document.getElementById("merchant-gmail").value
+    let inputfullName = document.getElementById("merchant-name").value 
+    let inputEmail = document.getElementById("merchant-gmail").value 
     let inputNumber = document.getElementById("merchant-phone").value
-    let inputwebsite = document.getElementById("merchant-website").value
+    let inputwebsite = document.getElementById("merchant-website").value 
     let inputContactName = document.getElementById("merchant-contactname").value
-    let inputContactNumber = document.getElementById("merchant-contactnumber").value
+    let inputContactNumber = document.getElementById("merchant-contactnumber").value 
     let inputContactEmail = document.getElementById("merchant-contactemail").value
     let inputNotes = document.getElementById("merchant-notes").value
-    let inputmerchanttype = document.merchants.type1.value
-    let inputmerchanttype1 = document.getElementById("merchant-category").value
+    let inputmerchanttype = document.getElementById("types").value
     let inputmerchanttype3 = document.getElementById("merchant-commissionpercentage").value
     let inputActiveForm = document.getElementById("merchant-date").value
-    let inputmerchanttype2 = document.merchants.type2.value
+
     if (inputfullName === "") {
-        alert("Fill all the Details")
+        alert("Fill all the Name")
         return
     }
     if (inputEmail === "") {
-        alert("Fill all the Details")
+        alert("Fill all the Email")
         return
     }
     if (inputNumber === "") {
-        alert("Fill all the Details")
+        alert("Fill all the Number")
         return
     }
     if (inputNotes === "") {
-        alert("Fill all the Details")
+        alert("Fill all the Notes")
         return
     }
     if (inputmerchanttype === "") {
-        alert("Fill all the Details")
+        alert("Fill all the Type")
         return
     }
-    if (inputmerchanttype1 === "") {
-        alert("Fill all the Details")
-        return
-    }
+
     if (inputmerchanttype3 === "") {
-        alert("Fill all the Details")
+        alert("Fill all the Commission Percentage")
         return
     }
     if (inputActiveForm === "") {
-        alert("Fill all the Details")
+        alert("Fill all the Date")
         return
     }
-    if (inputmerchanttype2 === "") {
-        alert("Fill all the Details")
-        return
-    }
+
+
+
+
     let PersonalInformation = {
         Name: inputfullName,
         Email: inputEmail,
@@ -58,12 +82,13 @@ function btn() {
         ContactEmail: inputContactEmail,
         Notes: inputNotes,
         Types: inputmerchanttype,
-        Category: inputmerchanttype1,
+        Category: this.paymentoptions("merchant-category"),
         CommissionPercentage: inputmerchanttype3,
         ActiveForm: inputActiveForm,
-        PaymentOptions: inputmerchanttype2
+        PaymentOptions: this.paymentoptions('type2')
     }
     console.log(PersonalInformation)
+
     var name = /^[a-zA-Z]+ [a-zA-Z]+$/;
     if (inputfullName.match(name)) {
         console.log("Sucess")
@@ -128,16 +153,16 @@ function btn() {
         editflow = false;
         storedData.push(PersonalInformation)
         localStorage.setItem("personalInfo", JSON.stringify(storedData))
-    } else { 
+    } else {
         var storedData = JSON.parse(localStorageData);
         if (editflow) {
             editflow = false;
             storedData[editindex] = PersonalInformation;
         } else {
-            
+
             let emailcheck = storedData.findIndex(x => x.Email === PersonalInformation.Email);
             let contactnumbercheck = storedData.findIndex(x => x.Phone === PersonalInformation.Phone);
-            if ( emailcheck === -1 && contactnumbercheck === -1) {
+            if (emailcheck === -1 && contactnumbercheck === -1) {
                 storedData.push(PersonalInformation)
             } else {
                 alert("Already data is available")

@@ -14,100 +14,105 @@
 
 <body>
   <div class="container">
-    <h1 class="header">New Business</h1>
-    <form class="form" id="merchants" name="merchants">
+    <h1 class="header">Form</h1>
+    <form class="form" id="form" action="">
       <div class="row">
         <div class="col-sm-4">
           <label for="name">Name:</label>
-          <input type="text" class="name input-test form-control" required id="merchant-name">
+          <input type="text" class="name input-test form-control" placeholder="Name..." required id="merchant-name">
         </div>
         <div class="col-sm-4">
           <label for="email">Email-Id:</label>
-          <input type="email" class="email form-control" required id="merchant-gmail" name="Email">
+          <input type="email" class="email form-control" required id="merchant-gmail" placeholder="Email..." name="Email">
         </div>
         <div class="col-sm-4">
           <label for="phone">Phone Number:</label>
-          <input class="phone form-control" required id="merchant-phone" type="tel" maxlength="10" name="phone">
+          <input class="phone form-control" required id="merchant-phone" placeholder="Number..." type="tel" maxlength="10"
+            name="phone">
         </div>
       </div>
 
       <div class="row">
-        <div class="col-sm-8">
+        <div class="col-sm-4">
           <label for="website">Website:</label>
-          <input type="website" class="websitelink form-control" required id="merchant-website" name="webSite">
+          <input type="website" class="websitelink form-control" placeholder="Website..." required id="merchant-website"
+            name="webSite">
         </div>
         <div class="col-sm-4">
           <label for="contactName">Contact Name:</label>
-          <input type="text" class="contactName form-control" required id="merchant-contactname" name="contactName">
+          <input type="text" class="contactName form-control" placeholder="Contact-Name..." required
+            id="merchant-contactname" name="contactName">
+        </div>
+        <div class="col-sm-4">
+          <label for="phone">Contact Phone:</label>
+          <input class="contactNumber form-control" placeholder="Contact-Number..." required id="merchant-contactnumber"
+            type="tel" maxlength="10" name="phone">
         </div>
       </div>
 
       <div class="row">
         <div class="col-sm-4">
-          <label for="phone">Contact Phone:</label>
-          <input class="contactNumber form-control" required id="merchant-contactnumber" type="tel" maxlength="10"
-            name="phone">
-        </div>
-        <div class="col-sm-4">
           <label for="contactemail">Contact Email:</label>
-          <input type="email" class="gmail form-control" required id="merchant-contactemail" name="contactEmail">
+          <input type="email" class="gmail form-control" placeholder="Conatct-Email..." required id="merchant-contactemail"
+            name="contactEmail">
         </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-4">
-          <label for="notes">Notes:</label>
-          <textarea rows="6" cols="30" class="notes form-control" required id="merchant-notes" name="notes"></textarea>
-        </div>
-        <div class="col-sm-8">
-          <label for="type">Type:</label>
-          <label class="radio-inline">
-            <input type="radio" class="merchant-type" name="type1" value="Small Business">Small Business</label>
-          <label class="radio-inline">
-            <input type="radio" class="merchant-type" name="type1" value="Enterprise">Enterprise</label>
-          <label class="radio-inline">
-            <input type="radio" class="merchant-type" name="type1" value="Entreprenenur">Entreprenenur</label>
-        </div>
-        <div class="col-sm-4">
-          <label for="category">Category:</label>
-          <select name="category" class="category form-control" required id="merchant-category">
-            <option value="" disabled selected>Select Category</option>
-            <option value="clothes">Clothes</option>
-            <option value="toys">Toys</option>
-            <option value="groceries">Groceries</option>
-            <option value="electronics">Electronics</option>
-            <option value="digital">Digital</option>
-          </select>
-        </div>
+       
         <div class="col-sm-4">
           <label for="commission percentage">Commission Percentage:</label>
-          <input type="number" class="commissionPercentage form-control" id="merchant-commissionpercentage"
+          <input type="number" class="commissionPercentage form-control" min="0" max="100" size="3" id="merchant-commissionpercentage"
             name="commissionPercentage" maxlength="100">
         </div>
         <div class="col-sm-4">
           <label for="active form">Active Form:</label>
           <input type="date" class="activeForm form-control" required id="merchant-date" name="activeForm">
         </div>
+      </div>
+      <div class="row">
         <div class="col-sm-4">
-          <label for="logo">Logo:</label>
-          <input type="image" class="picture" id="logo" name="logo">
+            <label for="critical account"> Critical Account:</label><br>
+            <input type="checkbox" class="merchant-critical" name="critical" value="yes"> Yes</label>
+            </div>
+          
+          <div class="col-sm-4">
+            <label for="type">Type:</label><br>
+              <input type="radio" class="merchant-type" required id = "types" name="type1" value="Small Business"> Small Business</label><br>
+              <input type="radio" class="merchant-type" required id = "types" name="type1" value="Enterprise"> Enterprise</label><br>
+              <input type="radio" class="merchant-type" required id = "types" name="type1" value="Entreprenenur"> Entreprenenur</label><br>
+          </div>
+        
+          <div class="col-sm-4">
+            <label for="payment options">Payment Options:</label><br>
+            <select  class="merchant-payment" required id="payment" name="type2" multiple size="3">
+              <option  class="merchant-payment" required id="payment" name="type2" value="Cash on Delievery"> Cash on Delievery</label></option>
+              <option  class="merchant-payment" required id="payment" name="type2" value="UPI"> UPI</label></option>
+              <option  class="merchant-payment" required id="payment" name="type2" value="Card Payment"> Card Payment</label></option>
+            </select>
+            </div>
         </div>
-        <div class="col-sm-4">
-          <input type="checkbox" id="criticalaccount" name="critical Account" value="Critical Account">
-          <label for="critical account"> Critical Account</label>
+      
+      <div class="row">
+         <div class="col-sm-4">
+          <label for="category"   >Category:</label><br>
+          <select class="category"  name="category" multiple size="5">
+            <option required name="merchant-category" value="clothes"> Clothes</option>
+            <option required name="merchant-category" value="toys"> Toys</option>
+            <option required name="merchant-category" value="groceries"> Groceries</option>
+            <option required name="merchant-category" value="electronics"> Electronics</option>
+            <option required name="merchant-category" value="digital"> Digital</option>
+          </select>
         </div>
-        <div class="col-sm-8">
-          <label for="payment options">Payment Options:</label>
-          <label class="radio-inline">
-            <input type="radio" class="merchant-payment" name="type2" value="Cash on Delievery">Cash on Delievery</label>
-          <label class="radio-inline">
-            <input type="radio" class="merchant-payment" name="type2" value="UPI">UPI</label>
-          <label class="radio-inline">
-            <input type="radio" class="merchant-payment" name="type2" value="Card Payment">Card Payment</label>
+       <div class="col-sm-4">
+          <label for="notes">Notes:</label>
+          <textarea rows="5"  class="notes form-control" required id="merchant-notes" name="notes"></textarea>
         </div>
       </div>
+
       <div class="center">
         <input type="button" class="btn btn-success" id="button" value="Entry Data" onclick="btn()">
+        <input type="button" class="btn btn-dark" id = "reset-button" value="Reset form" onclick="myfunction()">
       </div>
+      
+  
     </form>
 
 
@@ -133,8 +138,7 @@
             <th scope="col">PaymentOptions</th>
             <th scope="col">Action</th>
             <th scope="col">Remove</th>
-
-          </tr>
+       </tr>
         </thead>
         <tbody id="personal3">
         </tbody>
