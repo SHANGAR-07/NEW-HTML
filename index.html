@@ -23,12 +23,13 @@
         </div>
         <div class="col-sm-4">
           <label for="email">Email-Id:</label>
-          <input type="email" class="email form-control" required id="merchant-gmail" placeholder="Email..." name="Email">
+          <input type="email" class="email form-control" required id="merchant-gmail" placeholder="Email..."
+            name="Email">
         </div>
         <div class="col-sm-4">
           <label for="phone">Phone Number:</label>
-          <input class="phone form-control" required id="merchant-phone" placeholder="Number..." type="tel" maxlength="10"
-            name="phone">
+          <input class="phone form-control" required id="merchant-phone" placeholder="Number..." type="tel"
+            maxlength="10" name="phone">
         </div>
       </div>
 
@@ -53,14 +54,14 @@
       <div class="row">
         <div class="col-sm-4">
           <label for="contactemail">Contact Email:</label>
-          <input type="email" class="gmail form-control" placeholder="Conatct-Email..." required id="merchant-contactemail"
-            name="contactEmail">
+          <input type="email" class="gmail form-control" placeholder="Conatct-Email..." required
+            id="merchant-contactemail" name="contactEmail">
         </div>
-       
+
         <div class="col-sm-4">
           <label for="commission percentage">Commission Percentage:</label>
-          <input type="number" class="commissionPercentage form-control" min="0" max="100" size="3" id="merchant-commissionpercentage"
-            name="commissionPercentage" maxlength="100">
+          <input type="number" class="commissionPercentage form-control" min="0" max="100" size="3"
+            id="merchant-commissionpercentage" name="commissionPercentage" maxlength="100">
         </div>
         <div class="col-sm-4">
           <label for="active form">Active Form:</label>
@@ -69,31 +70,37 @@
       </div>
       <div class="row">
         <div class="col-sm-4">
-            <label for="critical account"> Critical Account:</label><br>
-            <input type="checkbox" class="merchant-critical" name="critical" value="yes"> Yes</label>
-            </div>
-          
-          <div class="col-sm-4">
-            <label for="type">Type:</label><br>
-              <input type="radio" class="merchant-type" required id = "types" name="type1" value="Small Business"> Small Business</label><br>
-              <input type="radio" class="merchant-type" required id = "types" name="type1" value="Enterprise"> Enterprise</label><br>
-              <input type="radio" class="merchant-type" required id = "types" name="type1" value="Entreprenenur"> Entreprenenur</label><br>
-          </div>
-        
-          <div class="col-sm-4">
-            <label for="payment options">Payment Options:</label><br>
-            <select  class="merchant-payment" required id="payment" name="type2" multiple size="3">
-              <option  class="merchant-payment" required id="payment" name="type2" value="Cash on Delievery"> Cash on Delievery</label></option>
-              <option  class="merchant-payment" required id="payment" name="type2" value="UPI"> UPI</label></option>
-              <option  class="merchant-payment" required id="payment" name="type2" value="Card Payment"> Card Payment</label></option>
-            </select>
-            </div>
+          <label for="critical account"> Critical Account:</label><br>
+          <input type="checkbox" class="merchant-critical" name="critical" value="yes"> Yes</label>
         </div>
-      
+
+        <div class="
+        col-sm-4">
+          <label for="type">Type:</label><br>
+          <input type="radio" class="merchant-type" required id="types" name="type1" value="Small Business"> Small
+          Business</label><br>
+          <input type="radio" class="merchant-type" required id="types" name="type1" value="Enterprise">
+          Enterprise</label><br>
+          <input type="radio" class="merchant-type" required id="types" name="type1" value="Entreprenenur">
+          Entreprenenur</label><br>
+        </div>
+
+        <div class="col-sm-4">
+          <label for="payment options">Payment Options:</label><br>
+          <select class="merchant-payment" required id="payment" name="type2" multiple size="3">
+            <option class="merchant-payment" required id="payment" name="type2" value="Cash on Delievery"> Cash on
+              Delievery</label></option>
+            <option class="merchant-payment" required id="payment" name="type2" value="UPI"> UPI</label></option>
+            <option class="merchant-payment" required id="payment" name="type2" value="Card Payment"> Card
+              Payment</label></option>
+          </select>
+        </div>
+      </div>
+
       <div class="row">
-         <div class="col-sm-4">
-          <label for="category"   >Category:</label><br>
-          <select class="category"  name="category" multiple size="5">
+        <div class="col-sm-4">
+          <label for="category">Category:</label><br>
+          <select class="category" name="category" multiple size="5">
             <option required name="merchant-category" value="Clothes"> Clothes</option>
             <option required name="merchant-category" value="Toys"> Toys</option>
             <option required name="merchant-category" value="Groceries"> Groceries</option>
@@ -101,18 +108,18 @@
             <option required name="merchant-category" value="Digital"> Digital</option>
           </select>
         </div>
-       <div class="col-sm-4">
+        <div class="col-sm-4">
           <label for="notes">Notes:</label>
-          <textarea rows="5"  class="notes form-control" required id="merchant-notes" name="notes"></textarea>
+          <textarea rows="5" class="notes form-control" required id="merchant-notes" name="notes"></textarea>
         </div>
       </div>
 
       <div class="center">
         <input type="button" class="btn btn-success" id="button" value="Entry Data" onclick="btn()">
-        <input type="button" class="btn btn-dark" id = "reset-button" value="Reset form" onclick="myfunction()">
+        <input type="button" class="btn btn-dark" id="reset-button" value="Reset form" onclick="myfunction()">
       </div>
-      
-  
+
+
     </form>
 
 
@@ -138,7 +145,7 @@
             <th scope="col">PaymentOptions</th>
             <th scope="col">Action</th>
             <th scope="col">Remove</th>
-       </tr>
+          </tr>
         </thead>
         <tbody id="personal3">
         </tbody>

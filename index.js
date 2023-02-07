@@ -6,12 +6,12 @@ function Category() {
     var ans = document.getElementsByName("merchant-category");
     let clickingcategory = [];
     for (i = 0; i < ans.length; i++) {
-        // if (ans[i].Selected)
         clickingcategory.push(ans[i].value);
 
     }
     return clickingcategory;
 }
+
 
 function paymentoptions(name) {
     var ans = document.getElementsByName(name);
@@ -20,22 +20,22 @@ function paymentoptions(name) {
     for (var i = 0, iLen = ans.length; i < iLen; i++) {
         opt = ans[i];
 
-        if (opt.selected) {
+        if (opt.selected || opt.checked) {
             result.push(opt.value || opt.text);
         }
     }
     return result;
 }
 function btn() {
-    let inputfullName = document.getElementById("merchant-name").value 
-    let inputEmail = document.getElementById("merchant-gmail").value 
+    let inputfullName = document.getElementById("merchant-name").value
+    let inputEmail = document.getElementById("merchant-gmail").value
     let inputNumber = document.getElementById("merchant-phone").value
-    let inputwebsite = document.getElementById("merchant-website").value 
+    let inputwebsite = document.getElementById("merchant-website").value
     let inputContactName = document.getElementById("merchant-contactname").value
-    let inputContactNumber = document.getElementById("merchant-contactnumber").value 
+    let inputContactNumber = document.getElementById("merchant-contactnumber").value
     let inputContactEmail = document.getElementById("merchant-contactemail").value
     let inputNotes = document.getElementById("merchant-notes").value
-    let inputmerchanttype = document.getElementById("types").value
+    // let inputmerchanttype = document.getElementsById("types").value
     let inputmerchanttype3 = document.getElementById("merchant-commissionpercentage").value
     let inputActiveForm = document.getElementById("merchant-date").value
 
@@ -55,11 +55,7 @@ function btn() {
         alert("Fill all the Notes")
         return
     }
-    if (inputmerchanttype === "") {
-        alert("Fill all the Type")
-        return
-    }
-
+    
     if (inputmerchanttype3 === "") {
         alert("Fill all the Commission Percentage")
         return
@@ -81,13 +77,15 @@ function btn() {
         ContactNumber: inputContactNumber,
         ContactEmail: inputContactEmail,
         Notes: inputNotes,
-        Types: inputmerchanttype,
+        Types: this.paymentoptions("type1"),
         Category: this.paymentoptions("merchant-category"),
         CommissionPercentage: inputmerchanttype3,
         ActiveForm: inputActiveForm,
         PaymentOptions: this.paymentoptions('type2')
     }
     console.log(PersonalInformation)
+
+
 
     var name = /^[a-zA-Z]+ [a-zA-Z]+$/;
     if (inputfullName.match(name)) {
@@ -143,6 +141,15 @@ function btn() {
         console.log("Sucess")
     } else {
         alert("Enter the valid number")
+        return;
+    }
+    console.log(PersonalInformation)
+    var checkForPercentage = /^\d{1,2}\.\d{1,2}$|^\d{1,3}$/;
+
+    if (inputmerchanttype3.match(checkForPercentage)) {
+        console.log("Sucess") 
+    } else {   
+        alert("Enter the CorrectPercentage")
         return;
     }
 
@@ -208,18 +215,19 @@ function editTable(i) {
     var personalInfoData = JSON.parse(localStorageData);
     const editData = personalInfoData[i];
     document.getElementById("merchant-name").value = editData.Name
-    document.getElementById("merchant-gmail").value = editData.Email
+    document.getElementById("merchant-gmail").value = editData.Email3
     document.getElementById("merchant-phone").value = editData.Phone
-    document.getElementById("merchant-website").value = editData.Website
+    document.getElementById("merchant-website").value = editData.Website        
     document.getElementById("merchant-contactname").value = editData.ContactName
     document.getElementById("merchant-contactnumber").value = editData.ContactNumber
     document.getElementById("merchant-contactemail").value = editData.ContactEmail
     document.getElementById("merchant-notes").value = editData.Notes
-    document.merchants.type1.value = editData.Types
-    document.getElementById("merchant-category").value = editData.Category
+    document.getElementsByName("merchant-category").value = editData.Category
+    document.getElementsByName("type1").value = editData.Types    
+    // document.getElementById("merchant-category").value = editData.Category
     document.getElementById("merchant-commissionpercentage").value = editData.CommissionPercentage
     document.getElementById("merchant-date").value = editData.ActiveForm
-    document.merchants.type2.value = editData.PaymentOptions
+    document.getElementsByName("type2").value = editData.PaymentOptions
     editflow = true;
     editindex = i;
 }
@@ -235,5 +243,4 @@ function deleteRow(i) {
 var editflow = false;
 var editindex = null;
 loadDataIntoTable();
-
 
